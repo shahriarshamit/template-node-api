@@ -1,2 +1,2 @@
-# template-node-api
+# Template Node API
 Node API Template
