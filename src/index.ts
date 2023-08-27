@@ -6,7 +6,9 @@ import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose';
 
-const MONGO_URL = 'mongodb://localhost:27017';
+import router from './router';
+
+const MONGO_URL = 'mongodb://localhost:27017/tsapi?directConnection=true';
 
 const app = express();
 app.use(cors({credentials: true}));
@@ -24,3 +26,5 @@ mongoose.connect(MONGO_URL);
 mongoose.connection.on('error', function(error: Error) {
     console.log(error);
 });
+
+app.use('/', router());

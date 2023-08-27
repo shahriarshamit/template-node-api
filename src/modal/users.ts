@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
     }
 });
 
-export const UserModel = new mongoose.Model('users', UserSchema);
+export const UserModel = mongoose.model('users', UserSchema);
 
 export const getUsers = function () {
     return UserModel.find();
@@ -31,7 +31,7 @@ export const getUserById = function (id: String) {
 };
 
 export const createUser = function (values: Record<string, any>) {
-    return new UserModel(values).save().then(function (user) {
+    new UserModel(values).save().then(function (user) {
         return user.toObject();
     });
 };
