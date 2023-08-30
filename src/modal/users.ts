@@ -36,7 +36,7 @@ export const createUser = function (values: Record<string, any>) {
     });
 };
 
-export const updateUser = function(id: String, values: Record<string, any>) {
+export const updateUser = function (id: String, values: Record<string, any>) {
     return UserModel.findByIdAndUpdate(id, values);
 };
 
