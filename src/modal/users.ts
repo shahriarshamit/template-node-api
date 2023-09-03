@@ -36,10 +36,10 @@ export const createUser = function (values: Record<string, any>) {
     });
 };
 
-export const updateUser = function (id: String, values: Record<string, any>) {
+export const updateUserById = function (id: String, values: Record<string, any>) {
     return UserModel.findByIdAndUpdate(id, values);
 };
 
-export const deleteUser = function (id: String) {
+export const deleteUserById = function (id: String) {
     return UserModel.findOneAndDelete({_id: id});
 };
